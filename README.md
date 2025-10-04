@@ -15,20 +15,20 @@
 </p>
 
 ## BruteBot
-- **BruteBot** is a Python-based tool that leverages the [webbot](https://webbot.readthedocs.io/) library to automate the process of brute-forcing login passwords, `particularly useful for login pages fortified with CSRF protection or random tokens`.
+- **BruteBot** is a Python tool that uses the [webbot](https://webbot.readthedocs.io/) library to automate brute-force attacks on login passwords, **especially for login pages protected by CSRF defenses or random tokens.**
 
 - The choice of webbot, a library derived from Selenium, was intentional. The goal was to emulate a user navigating the target website’s login page and attempting to brute-force the password in the most unobtrusive manner.
 
-- This approach ensures that any random tokens that are generated when the login page gets loaded are automatically included in the subsequent login POST requests, thereby making the automation of password brute-forcing possible.
+- This approach ensures that any random tokens that are generated when the login page gets loaded are automatically included in the subsequent login `POST` requests, thereby making the automation of password brute-forcing possible.
 
 - Furthermore, it gives you a chance to visualize the browser's operations in real time, which can be useful for troubleshooting.
 <br><br>
 ## How BruteBot Operates?
-- It retrieves the login page via a GET request.
+- It retrieves the login page via a `GET` request.
 
 - It utilizes the username / email address and the password list provided by you.
 
-- It submits these credentials to the server via multiple POST requests (each containing a unique username-password combination), alongside any additional random tokens if present  (such as: an anti-CSRF token, an arbitrary browser identifier, timestamp, etc.)
+- It submits these credentials to the server via multiple `POST` requests (each containing a unique username-password combination), alongside any additional random tokens if present  (such as an anti-CSRF token, an arbitrary browser identifier, timestamp, etc.)
 
 - It repeats this process until it successfully discovers the correct password.
 <br><br>
@@ -37,12 +37,12 @@
 1. Install `webbot` using the following command:
 
 ```bash
-pip install webbot
+pip3 install webbot
 ```
 
 2. Download or clone the repository.
 
-3. Place your password list file in the same directory as BruteBot.py.
+3. Place your password list file in the same directory as `BruteBot.py`.
 <br><br>
 _That's it! You are good to go!_
 <br><br>
@@ -50,7 +50,7 @@ _That's it! You are good to go!_
 
 ### Command
 ```
-python BruteBot.py -t (LOGIN PAGE URL) -u USERNAME -p (PASSWORD LIST) --uid (USERNAME ELEMENT ID) --pid (PASSWORD ELEMENT ID) --bname (LOGIN BUTTON NAME) -m (visible / headless) -s (TIME IN SECONDS)
+python3 BruteBot.py -t (LOGIN PAGE URL) -u USERNAME -p (PASSWORD LIST) --uid (USERNAME ELEMENT ID) --pid (PASSWORD ELEMENT ID) --bname (LOGIN BUTTON NAME) -m (visible / headless) -s (TIME IN SECONDS)
 ```
 
 ### Program Arguments
@@ -83,27 +83,27 @@ python BruteBot.py -t (LOGIN PAGE URL) -u USERNAME -p (PASSWORD LIST) --uid (USE
 **Demo 1** - To run BruteBot with the default options:
 
 ```python
-python BruteBot.py -t https://demo.testfire.net/login.jsp -u admin -p passwords.txt --uid uid --pid passw --bname Login
+python3 BruteBot.py -t https://demo.testfire.net/login.jsp -u admin -p passwords.txt --uid uid --pid passw --bname Login
 ```
 
 <img src="https://github.com/Navinscribed/media-repo/blob/master/BruteBot/BruteBot-Demo-1.gif"></img>
 
-<br><br>
+<br>
 
 **Demo 2** - To see the browser tab(s) in action when BruteBot runs:
 
 ```python
-python BruteBot.py -t https://demo.testfire.net/login.jsp -u admin -p passwords.txt --uid uid --pid passw --bname Login -m visible
+python3 BruteBot.py -t https://demo.testfire.net/login.jsp -u admin -p passwords.txt --uid uid --pid passw --bname Login -m visible
 ```
 
 <img src="https://github.com/Navinscribed/media-repo/blob/master/BruteBot/BruteBot-Demo-2.gif"></img>
 
-<br><br>
+<br>
 
 **Demo 3** - To route the traffic through a network proxy while running BruteBot:
 
 ```python
-python BruteBot.py -t https://demo.testfire.net/login.jsp -u admin -p passwords.txt --uid uid --pid passw --bname Login --proxy http://localhost:8080
+python3 BruteBot.py -t https://demo.testfire.net/login.jsp -u admin -p passwords.txt --uid uid --pid passw --bname Login --proxy http://localhost:8080
 ```
 
 <img src="https://github.com/Navinscribed/media-repo/blob/master/BruteBot/BruteBot-Demo-3.gif"></img>
@@ -119,14 +119,12 @@ python BruteBot.py -t https://demo.testfire.net/login.jsp -u admin -p passwords.
 - Special thanks to [@m-uma](https://github.com/m-uma/) for their invaluable offline contributions that were instrumental in the development of this tool.
 <br><br>
 ## License & Contributions
-- This project is licensed under the terms of the MIT license. Feel free to contribute, go ahead and submit a [Pull Request](https://github.com/Navinscribed/BruteBot/pulls).
+- This project is licensed under the terms of the MIT license. If you wish to contribute, please feel free to submit a [Pull Request](https://github.com/Navinscribed/BruteBot/pulls).
 - However, if you are considering making significant modifications, I would insist that you discuss with me first by opening an [Issue](https://github.com/Navinscribed/BruteBot/issues/new).
 <br><br>
 ---
 <span style="vertical-align: middle;">Like my work?</span>
-<a href="https://www.buymeacoffee.com/navin.m" style="vertical-align: middle;">
+<a href="https://www.buymeacoffee.com/navinscribe" style="vertical-align: middle;">
   Buy me a coffee maybe?
   <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" style="width: 30px; height: 30px; vertical-align: middle;">
 </a>
-
-
