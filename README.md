@@ -110,6 +110,25 @@ python3 BruteBot.py -t https://demo.testfire.net/login.jsp -u admin -p passwords
 
 <br>
 
+## Planning a Graphical Interface
+
+Are you exploring ways to layer a graphical user interface on top of the existing command-line workflow? Check out the new
+[UI improvements guide](UI_IMPROVEMENTS.md) for suggestions on how to structure a lightweight controller panel, recommended
+widgets, and ideas for keeping the automation features discoverable without overwhelming the operator.
+
+## Graphical Interface
+
+Prefer pointing and clicking over terminal commands? Launch the bundled Tkinter control panel to capture the same settings and
+run BruteBot for you.
+
+```bash
+python3 brutebot_gui.py
+```
+
+The window prompts you for all required fields, lets you browse to a password list stored anywhere on disk, and streams the
+script output into a scrollable log. Use the **Stop** button if you need to end the run early—the app will terminate the
+underlying CLI process for you.
+
 ## Disclaimer
 - Please refrain from using this tool on websites without explicit permission, as doing so may be considered illegal or unethical.
 - I bear no responsibility for any misuse of this tool.
